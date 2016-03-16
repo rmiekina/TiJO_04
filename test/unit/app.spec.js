@@ -35,4 +35,36 @@ describe('app', function () {
             expect(app.divide(101, 0)).toEqual(false);
         });
     });
+    describe('getDescendingNumbers function', function () {
+        it('should Descend Numbers form numberFrom to numberTo', function () {
+                       expect(app.getDescendingNumbers(3,1)).toEqual('3 2 1');
+            expect(app.getDescendingNumbers(4,2)).toEqual('4 3 2');
+        });
+            it('should return false when numberFrom is smaller than numberTo', function () {
+                       expect(app.getDescendingNumbers(1,2)).toMatch(false);
+});
+    });
+
+    describe('areaOfTrapezoid function', function () {
+        it('should count Trapezoid', function () {
+            expect(app.areaOfTrapezoid(2,2,2)).toEqual(4);
+            expect(app.areaOfTrapezoid(2,3,4)).toEqual(10);
+        });
+        it('should count Trapezoid if a<0 ', function () {
+            expect(app.areaOfTrapezoid(-1,2,2)).toEqual(false);
+        });
+            it('should count Trapezoid if b<0 ', function () {
+            expect(app.areaOfTrapezoid(1,-2,2)).toEqual(false);
+            });
+                it('should count Trapezoid if c<0 ', function () {
+            expect(app.areaOfTrapezoid(1,2,-2)).toEqual(false);
+    });
+});
+    describe('maxArray function', function () {
+        it('should point the biggest digital', function () {
+            expect(app.maxArray(2,12,5)).toEqual(12);
+            expect(app.maxArray(2,"3",4)).toEqual(false);
+            expect(app.maxArray(2,[3,4])).toEqual(false);
+        });
+    });
 });
